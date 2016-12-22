@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# initialize the random number to be returned
+random="";
+
+# retreive the first argument to the script
+number=$(( $1 ));
+
+# concatinate a new random single diget number according to the number
+# specified
+for (( i=0; i < $number; i++ ));
+    do
+        newRandom=$(( $RANDOM%10 ));
+        random="$random$newRandom";
+done
+
+# print the result to STDIN
+echo $random;
